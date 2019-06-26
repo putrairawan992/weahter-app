@@ -1,0 +1,7 @@
+{
+  "current-weather": "Current Weather",
+  "footer" : {
+    "copyright": "© {{year}} Next Weather. Made with <0></0> in Indonesia."
+  },
+  "title": "Next Weather | Check Weather in Your Area"
+}

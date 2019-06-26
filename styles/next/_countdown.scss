@@ -1,0 +1,15 @@
+.tick, .tick-label{
+  margin-left: 4px;
+  display: inline-block;
+  text-align: center;
+}
+
+.tick{
+  &:first-child{
+    margin-left:0px;
+  }
+}
+
+.tick{
+  min-width: 16px;
+}

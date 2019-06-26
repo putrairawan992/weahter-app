@@ -1,0 +1,122 @@
+// for change
+
+$border-color: rgba(255, 255, 255, .2);
+$tooltip-distance: 4px;
+
+// do not touch
+
+$position-before: calc(100% + 8px + #{$tooltip-distance});
+$position-after: calc(100% + 3px + #{$tooltip-distance});
+
+.tooltip-top, .tooltip-right, .tooltip-bottom, .tooltip-left {
+  position: relative;
+  outline: none;
+
+  &:before {
+    content: attr(tooltip);
+    padding: 8px 16px;
+    color: #fff;
+    white-space: pre;
+    border-radius: 2px;
+    border: 1px solid  $border-color;
+    text-align: center;
+    font-weight: normal;
+    font-size: 12px;
+    z-index: 998;
+  }
+
+  &:after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border: 1px solid transparent;
+    border-left-color: $border-color;
+    border-bottom-color: $border-color;
+    z-index: 999;
+  }
+
+  &:before, &:after {
+    position: absolute;
+    cursor: default;
+    opacity: 0;
+    background-color: $primary;
+    pointer-events: none;
+    transition: all ease-out .15s;
+    box-shadow: none;
+  }
+
+  &:hover {
+    &:before, &:after {
+      opacity: 1;
+      margin: 0;
+    }
+  }
+}
+
+.tooltip-top {
+  &:before {
+    bottom: $position-before;
+    transform: translateX(-50%);
+  }
+
+  &:after {
+    bottom: $position-after;
+    transform: translateX(-50%) rotate(-45deg);
+  }
+
+  &:before, &:after {
+    left: 50%;
+    margin-bottom: -$tooltip-distance;
+  }
+}
+
+.tooltip-right {
+  &:before {
+    left: $position-before;
+    transform: translateY(-50%);
+  }
+
+  &:after {
+    left: $position-after;
+    transform: translateY(-50%) rotate(-315deg);
+  }
+
+  &:before, &:after {
+    top: 50%;
+    margin-left: -$tooltip-distance;
+  }
+}
+
+.tooltip-bottom {
+  &:before {
+    top: $position-before;
+    transform: translateX(-50%);
+  }
+
+  &:after {
+    top: $position-after;
+    transform: translateX(-50%) rotate(-225deg);
+  }
+
+  &:before, &:after {
+    left: 50%;
+    margin-top: -$tooltip-distance;
+  }
+}
+
+.tooltip-left {
+  &:before {
+    right: $position-before;
+    transform: translateY(-50%);
+  }
+
+  &:after {
+    right: $position-after;
+    transform: translateY(-50%) rotate(-135deg);
+  }
+
+  &:before, &:after {
+    top: 50%;
+    margin-right: -$tooltip-distance;
+  }
+}

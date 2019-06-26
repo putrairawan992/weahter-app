@@ -1,0 +1,23 @@
+a{
+  cursor: pointer;
+}
+
+.love{
+  color: $red;
+  font-size: 1.2rem;
+  &:before{
+    content: '♥';
+  }
+}
+
+.b-grey{
+  background-color: $gray-700;
+}
+
+.m-t-16{
+  margin-top: 16px;
+}
+
+.m-b-24{
+  margin-bottom: 24px;
+}
